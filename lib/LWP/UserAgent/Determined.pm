@@ -23,7 +23,10 @@ sub simple_request {
     my $resp;
     my $before_c = $self->before_determined_callback;
     my $after_c  = $self->after_determined_callback;
+
+    my $request = $args[0];
     foreach my $pause_if_unsuccessful ( @timing_tries, undef ) {
+        $args[0] = $request->clone;
         $before_c and $before_c->(
             $self, \@timing_tries, $pause_if_unsuccessful, $determination,
             \@args
