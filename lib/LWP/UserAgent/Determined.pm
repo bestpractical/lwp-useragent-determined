@@ -1,7 +1,7 @@
 
 package LWP::UserAgent::Determined;
 
-$VERSION = '1.06';
+$VERSION = '1.07';
 use      LWP::UserAgent ();
 @ISA = ('LWP::UserAgent');
 
